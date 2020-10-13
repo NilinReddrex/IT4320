@@ -12,19 +12,19 @@ namespace FizzBuzz
         {
             for(int i = 1; i <= 100; i++)
             {
-                string output = string.Empty;
+                StringBuilder sb = new StringBuilder();
 
                 if (i % 3 == 0)
                 {
-                    output += "Fizz";
+                    sb.Append("Fizz");
                 }
                 
-                if(i % 5 == 0)
+                if (i % 5 == 0)
                 {
-                    output += "Buzz";
+                    sb.Append("Buzz");
                 }
 
-                Console.WriteLine(output == string.Empty ? i.ToString() : output); 
+                Console.WriteLine(sb.Length == 0 ? i.ToString() : sb.ToString()); 
             } 
             
             Console.Read();

@@ -12,23 +12,22 @@ namespace FizzBuzz
         {
             for(int i = 1; i <= 100; i++)
             {
-                if (i % 3 == 0 && i % 5 == 0)
+                StringBuilder sb = new StringBuilder();
+
+                if (i % 3 == 0)
                 {
-                    Console.WriteLine("FizzBuzz");
+                    sb.Append("Fizz");
                 }
-                else if (i % 3 == 0)
+                
+                if (i % 5 == 0)
                 {
-                    Console.WriteLine("Fizz");
+                    sb.Append("Buzz");
                 }
-                else if(i % 5 == 0)
-                {
-                    Console.WriteLine("Buzz");
-                }
-                else
-                {
-                    Console.WriteLine(i);
-                }
-            } Console.Read();
+
+                Console.WriteLine(sb.Length == 0 ? i.ToString() : sb.ToString()); 
+            } 
+            
+            Console.Read();
         }
     }
 }

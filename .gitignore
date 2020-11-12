@@ -6,3 +6,5 @@
 /FizzBuzz/bin/*
 /FizzBuzz/FizzBuzz/obj
 /FizzBuzz/FizzBuzz/bin
+it-4320-project3a/flask_wtforms_tutorial/__pycache__/*
+it-4320-project3a/__pycache__/*

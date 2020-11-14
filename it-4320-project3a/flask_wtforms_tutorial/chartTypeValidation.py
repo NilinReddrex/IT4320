@@ -1,6 +1,6 @@
 import requests
 
-class ChartTypeInput():
+class ChartTypeValidation():
     
     def __init__(self):
         """Chart Type input constructor"""

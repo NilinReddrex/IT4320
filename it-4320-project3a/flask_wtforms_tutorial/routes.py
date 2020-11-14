@@ -3,10 +3,10 @@ from flask import redirect, render_template, url_for, request, flash, session
 
 from .forms import StockForm
 from .charts import *
-from .symbolInput import SymbolInput
-from .chartTypeInput import ChartTypeInput
-from .timeSeriesInput import TimeSeriesInput
-from .dateInput import DateInput
+from .symbolValidation import SymbolValidation
+from .chartTypeValidation import ChartTypeValidation
+from .timeSeriesValidation import TimeSeriesValidation
+from .dateValidation import DateValidation
 
 @app.route("/", methods=['GET', 'POST'])
 @app.route("/stocks", methods=['GET', 'POST'])
@@ -15,7 +15,7 @@ def stocks():
     
     err = None
     chart = None
-    si = SymbolInput()
+    si = SymbolValidation()
     try:
         si.symbols = symbolsCache
         print("Symbols loaded from cache.")
@@ -35,20 +35,20 @@ def stocks():
             
             chart_type = request.form['chart_type']
 
-            ct = ChartTypeInput()
+            ct = ChartTypeValidation()
             if(ct.isInputValid(chart_type) == False):
                 err = ct.error
 
             time_series = request.form['time_series']
 
-            ts = TimeSeriesInput()
+            ts = TimeSeriesValidation()
             if(ts.isInputValid(time_series) == False):
                 err = ts.error
 
             start_date = request.form['start_date']
             end_date = request.form['end_date']
 
-            d = DateInput()
+            d = DateValidation()
             if(d.isInputValid(start_date, end_date) == False):
                 err = d.error
 

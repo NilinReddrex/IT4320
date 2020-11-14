@@ -2,7 +2,7 @@ from flask import current_app
 import requests 
 from .constants import Constants
 
-class SymbolInput():
+class SymbolValidation():
 
     def __init__(self):
         """Symbol input constructor"""

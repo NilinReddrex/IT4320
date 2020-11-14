@@ -1,7 +1,7 @@
 from .charts import convert_date
 import requests
 
-class DateInput():
+class DateValidation():
     def __init__(self):
         self.error = None
 

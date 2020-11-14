@@ -1,6 +1,6 @@
 import requests
 #Time Series Function Input
-class TimeSeriesInput():
+class TimeSeriesValidation():
     def __init__(self):
         """Chart Type input constructor"""
         self.error = None
